@@ -29,14 +29,14 @@ def main():
         try:
             # Recherche du bouton de réveil
             button = wait.until(
-                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Yes, get this app back up')]"))
+                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Yes, get this app back up!')]"))
             )
             print("Bouton de réveil trouvé. Clic en cours...")
             button.click()
 
             # Vérification que le bouton disparaît après clic
             try:
-                wait.until(EC.invisibility_of_element_located((By.XPATH, "//button[contains(text(),'Yes, get this app back up')]")))
+                wait.until(EC.invisibility_of_element_located((By.XPATH, "//button[contains(text(),'Yes, get this app back up!')]")))
                 print("Bouton cliqué et disparu ✅ (l'app se réveille)")
             except TimeoutException:
                 print("Bouton cliqué mais n'a pas disparu ❌ (échec possible)")
